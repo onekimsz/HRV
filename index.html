@@ -19,7 +19,7 @@
             background: linear-gradient(135deg, #000 25%, #333 100%);
             color: white;
             text-align: center;
-            overflow: hidden; /* Menonaktifkan scroll */
+            overflow-x: hidden; /* Menonaktifkan scroll horizontal */
         }
         .container {
             display: flex;
@@ -28,6 +28,7 @@
             justify-content: center;
             height: 100vh;
             padding: 20px;
+            width: 100%;
         }
         h1 {
             font-size: 2.5em;
@@ -42,15 +43,16 @@
         }
         .images-container {
             display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
+            justify-content: flex-end; /* Menjaga gambar sejajar ke kanan */
             gap: 15px;
-            max-width: 1000px;
+            max-width: 100%;
+            width: 100%;
+            flex-wrap: wrap;
         }
         .image-card {
             position: relative;
-            width: 250px;
-            height: 300px;
+            width: 180px; /* Ukuran gambar lebih kecil */
+            height: 180px; /* Menjaga aspek gambar tetap proporsional */
             border-radius: 10px;
             overflow: hidden;
             cursor: pointer;
@@ -105,9 +107,12 @@
             .intro-text {
                 font-size: 1em;
             }
+            .images-container {
+                justify-content: center; /* Menjaga gambar tetap di tengah untuk layar kecil */
+            }
             .image-card {
-                width: 200px;
-                height: 250px;
+                width: 150px; /* Ukuran gambar lebih kecil pada perangkat mobile */
+                height: 150px;
             }
         }
     </style>
